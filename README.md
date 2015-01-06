@@ -81,6 +81,7 @@ Now you make the csv!
 ![image](https://github.com/nmgfrank/redminePlugin_redmineUpdater/blob/master/readme_pic/import_match.jpg)
 
 (3) Import Exceptions
+
 Data in CSV file will be checked by simple rules. If invalid data exists, error message will appear on the page. You find the error , modify the csv file and import again.  
 
 ![image](https://github.com/nmgfrank/redminePlugin_redmineUpdater/blob/master/readme_pic/import_exception.jpg)
