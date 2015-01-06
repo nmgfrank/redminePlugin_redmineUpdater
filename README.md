@@ -18,9 +18,9 @@ Then you will see the `Batch File Update` button on the project menu.
 
 ####2. Create Issues
 
-The main steps of creating issues are generating csv file and import file info the module. There are also two ways to generate csv file: generate csv manually or by vba.
+The main steps of creating issues are generating csv file and import file info the module. 
 
-#####2.1 Generate csv manually
+#####2.1 Generate csv
 (1) Edit Excel File
 
 First Line: Titles of data. They should be a one-to-one match between the titles in excel and the field name of redmine ticket.
@@ -63,6 +63,60 @@ Other Lines: The data that will be imported. Each line will create a new ticket.
 (3) Encode the csv file with utf8
 
 ![image](https://github.com/nmgfrank/redminePlugin_redmineUpdater/blob/master/readme_pic/encode_utf8.jpg) 
+
+Now you make the csv!
+
+
+#####2.2 Load CSV
+
+(1) Choose the csv that you make.
+![image](https://github.com/nmgfrank/redminePlugin_redmineUpdater/blob/master/readme_pic/import_index.jpg)
+
+(2) Set import items
+
+* Give a one-to-one match between each title in csv and each field name in redmine ticket.
+* Set `add` as the value of `Operation`.
+* Set the tracker type that we need as the value of `Default tracker`. If we set this field empty, tracker info must be in the csv file , and be matched to the tracker field in redmine ticket.
+
+![image](https://github.com/nmgfrank/redminePlugin_redmineUpdater/blob/master/readme_pic/import_match.jpg)
+
+(3) Import Exceptions
+Data in CSV file will be checked by simple rules. If invalid data exists, error message will appear on the page. You find the error , modify the csv file and import again.  
+
+![image](https://github.com/nmgfrank/redminePlugin_redmineUpdater/blob/master/readme_pic/import_exception.jpg)
+
+(4) Import Result
+
+After importing, result page pops up. The page shows the number of successfully imported items and the number of fails.
+
+![image](https://github.com/nmgfrank/redminePlugin_redmineUpdater/blob/master/readme_pic/import_result.jpg) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
