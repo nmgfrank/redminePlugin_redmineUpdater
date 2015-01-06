@@ -1,0 +1,40 @@
+<h2><%=l(:label_issue_updater)%></h2>
+
+<% content_for :submit_javascript do %>
+<script type='text/javascript'>
+  $(function() {
+    $("#split_input").attr("readonly","readonly");
+    $("#wrapper_input").attr("readonly","readonly");
+    $(submit_button).click(function() {
+        if ($("#file").val() == "") {
+            alert("please select one file!");
+            return false;
+        } 
+    });
+  });
+</script>
+<% end %>
+
+
+<%= form_tag({:action => 'match'}, {:multipart => true}) do %>
+    <%= hidden_field_tag 'project_id', @project.id %>
+    
+    <p><label><%=l(:label_upload_notice)%></label><br/>
+    <%= file_field_tag 'file', :size => 60%></p>
+
+    <fieldset class="box"><legend><%= l(:label_upload_format) %></legend>
+         <p><label><%=l(:label_upload_encoding)%></label>
+        <%= select_tag "encoding", "<option value=\"U\">UTF8</option>".html_safe %></p>
+        
+        <p><label><%=l(:label_upload_splitter)%></label>
+        <%= text_field_tag "splitter", ',', {:size => 3, :maxlength => 1,:id => 'split_input'} %></p>
+        
+        <p><label><%=l(:label_upload_wrapper)%></label>
+        <%= text_field_tag "wrapper", '"', {:size => 3, :maxlength => 1, :id => 'wrapper_input'} %></p>
+        
+    </fieldset> 
+
+    <%= submit_tag l(:button_upload),{:id=>'submit_button'} %>
+<% end %>
+
+<%= yield :submit_javascript %>

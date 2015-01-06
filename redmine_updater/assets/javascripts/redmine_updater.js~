@@ -1,0 +1,20 @@
+
+
+function show_update_rules(operation) {
+    $("#split_input").attr("disabled","true");
+    $("#wrapper_input").attr("disabled","true");
+    if (operation == "pure_add") {
+        $("#match_form").attr("action","/updater/pure_add");
+        $("#unique_words_label").hide();
+        $("#match_submit_button").removeAttr("disabled");
+    } else if (operation == "pure_update") {
+        $("#match_form").attr("action","/updater/pure_update");
+        $("#unique_words_label").show();
+        $("#match_submit_button").removeAttr("disabled");
+        $("#match_submit_button").attr("disabled","true");
+    } else {
+        $("#unique_words_label").hide();
+        $("#match_submit_button").attr("disabled","true");
+    }
+  
+}

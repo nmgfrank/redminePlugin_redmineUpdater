@@ -1,0 +1,2 @@
+module UpdaterHelper
+end

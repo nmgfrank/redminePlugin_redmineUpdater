@@ -1,0 +1,17 @@
+<h2><%= Wrong CSV data %></h2>
+<p>
+There is something wrong with CSV data.<br />
+1. Make sure that the file is encoded with UTF-8.<br />
+2. Make sure that the file is in right CSV format. <br />
+</p>
+<a href="/updater/index">Click here to go back</a>
+<% content_for :submit_javascript do %>
+<script type='text/javascript'>
+
+</script>
+<% end %>
+
+
+
+
+<%= yield :submit_javascript %>
