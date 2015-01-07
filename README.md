@@ -93,6 +93,45 @@ After importing, result page pops up. The page shows the number of successfully 
 ![image](https://github.com/nmgfrank/redminePlugin_redmineUpdater/blob/master/readme_pic/import_result.jpg) 
 
 
+####3 Update Issues
+
+#####3.1 Export Issues
+On the bottom of the issues list page, there are the button of export data of issues.
+
+* The field `id` must be exported. It will be the key to update the issue.
+* Save the data in the format of `xls` or `xlsx`.
+
+#####3.2 Modify data
+
+Modify the data that you want, such data of `start_date`, `assignee` and so on.
+
+* Never modify the data of `id` column, as it is the key to update. 
+
+#####3.3 Make csv file
+
+Save the modified xls/xlsx file as csv file. Then encode the file as utf8
+
+#####3.4 Load csv, Bulk Update
+
+(1) Choose the csv, then load it.
+
+(2) Set up the updating items.
+
+* Give a one-to-one match to the titles in csv and the field name of redmine tickt.<br /><br />
+    Notice:
+	+ There must be a match between the title in csv and the `id` field in redmine. When updating, we neet this key to find the issue.
+	+ We match the titles those we need except the title of `id`. If the data of certain column is not needed, it should be set as `ignore` .
+* Set the value of Operation to `update`.
+* If the value of `Default tracker` is set to `Bug`, then only the issues of tracker `Bug` will be updated. If we set the value of `Default tracker` to none, the issues of any tracker could be updated.
+* Never leave `Select unique-valued column` empty. We set the value of it to `#`. `#` is the title in csv witch is matched with `id` field in csv.
+
+![image](https://github.com/nmgfrank/redminePlugin_redmineUpdater/blob/master/readme_pic/update_match.jpg) 
+
+(3) Click `Submit`. Start to Update.
+
+
+
+
 
 
 
